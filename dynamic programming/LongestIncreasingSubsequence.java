@@ -26,6 +26,13 @@ class LongestIncreasingSubsequence {
             if(i == arr.length-1) {
                 break;
             }
+
+            // If left side number = right side number, 
+            // then move to the next right side number, and set the left side number to the first
+            if(j == i) { 
+                i ++; // Move to the next right side number
+                j = 0; // Reset j to the begining of the array
+            }
             
             if(arr[i] > arr[j]) { // Check if the right side number is greater than the left side number
                 if(longestArray[i] < (longestArray[j] + 1)) {
@@ -37,14 +44,7 @@ class LongestIncreasingSubsequence {
                 }
             }
 
-            // If left side number = right side number, 
-            // then move to the next right side number, and set the left side number to the first
-            if(j == i) { 
-                i ++;
-                j = 0;
-            }
-
-            j ++;
+            j ++; // Jump to the next item
         }
 
         // Now longest array all the longest sunsequnces for each position, 
