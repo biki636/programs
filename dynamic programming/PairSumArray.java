@@ -22,8 +22,10 @@ class PairSumArray {
                 System.out.println("[" + array[i] + ", " + array[j] + "]");
                 return;
             } else if(tempSum < sum) {
+                // if array[i] + array[j] is less than sum, then increament i to move to a greater number
                 i ++;
             } else {
+                // if array[i] + array[j] is greater than sum, then decrement j to move to a lesser number
                 j --;
             }
         }
